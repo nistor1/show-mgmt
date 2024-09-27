@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+  <h5>CLIENT</h5>
+
+  <div class="mb-3 d-flex flex-row">
+    <button id="logout-button" (click)="logOut()" class="btn btn-danger">
+      <i class="fa fa-right-from-bracket"></i>
+    </button>
+  </div>
+  <div class="p-2">
+    @for (order of orders; track order.orderId) {
+      <app-order-card [order]="order" ></app-order-card>
+    } @empty {
+      <p id="empty-shows">No show</p>
+    }
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container my-4">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+
+  <h5 class="mb-4">Show's details</h5>
+
+  <div class="card shadow-lg p-3 mb-4">
+    <div class="d-flex flex-row align-items-center">
+      <div class="icon-container m-3">
+        <i class="fa fa-microphone-alt fa-2x text-primary"></i>
+      </div>
+      <div class="details-container ms-3">
+        <h4 class="fw-bold mb-3">{{ show?.name }}</h4>
+        <p class="text-muted mb-2">{{ show?.description }}</p>
+        <p class="text-info mb-2"><i class="fa fa-map-marker-alt"></i> Location: {{ show?.location }}</p>
+        <p class="text-warning mb-2"><i class="fa fa-calendar-alt"></i> Date: {{ show?.eventDate }}</p>
+        <p class="text-success mb-2"><i class="fa fa-ticket-alt"></i> Tickets left: {{ show?.numberOfTicketsLeft }}</p>
+        <p class="text-danger mb-0"><i class="fa fa-money-bill-wave"></i> Price: {{ show?.price }} RON</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center">
+    <div class="number-spinner input-group me-3">
+      <button class="btn btn-outline-secondary" (click)="decreaseValue()">-</button>
+      <input class="form-control text-center" type="number" [(ngModel)]="numberValue" min="0">
+      <button class="btn btn-outline-secondary" (click)="increaseValue()">+</button>
+    </div>
+    <button id="result-container" (click)="buyTicket()" class="btn btn-success me-3">
+      <i class="fa fa-right-from-bracket"></i> Buy Ticket
+    </button>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger alert-small" role="alert">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success" role="alert">
+    {{ successMessage }}
+  </div>
+  <div class="card p-3 mb-4 add-comment">
+    <h5 class="mb-3">Add a Comment</h5>
+    <textarea class="form-control mb-2" rows="3" [(ngModel)]="commentDescription" placeholder="Write your comment..."></textarea>
+    <button class="btn btn-primary smaller-comment-btn" (click)="addComment()">Submit</button>
+  </div>
+
+  <div class="p-2">
+    <h5 class="mb-4">Comments</h5>
+      @for (comment of comments; track comment.commentId) {
+        <div class="comment-container">
+        <app-comment-card [comment]="comment" (deleteComment)="deleteCommentCalled($event)"></app-comment-card>
+        </div>
+      }
+    @empty {
+      <p id="empty-comments">No comments</p>
+    }
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h5>All chefs</h5>
+
+  <div class="mb-3 d-flex flex-row">
+    <label class="form-label">Rating: </label>
+    <input [(ngModel)]="rating" class="form-control" type="number">
+    <button id="search-button" (click)="searchAllByRating()" class="btn btn-info">
+      <i class="fa fa-magnifying-glass"></i>
+    </button>
+    <button id="logout-button" (click)="logOut()" class="btn btn-danger">
+      <i class="fa fa-right-from-bracket"></i>
+    </button>
+  </div>
+
+  <div class="p-2">
+    @for (chef of chefs; track chef.id) {
+      <app-chef-card [chef]="chef" (deleteChef)="deleteChefCalled($event)"></app-chef-card>
+    } @empty {
+      <p id="empty-chefs">No chef</p>
+    }
+  </div>
+</div>

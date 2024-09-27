@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+
+  <h5 class="mb-4">Add New User</h5>
+
+  <div class="card shadow-lg p-3 mb-4">
+    <div class="d-flex flex-row align-items-center">
+      <div class="icon-container m-3">
+        <i class="fa fa-user fa-3x"></i>
+      </div>
+      <div class="details-container ms-3">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name:</label>
+          <input id="nameInput" class="form-control" type="text" [(ngModel)]="newUser.name">
+        </div>
+        <div class="mb-3">
+          <label for="ageInput" class="form-label">Age:</label>
+          <input id="ageInput" class="form-control" type="number" [(ngModel)]="newUser.age">
+        </div>
+        <div class="mb-3">
+          <label for="roleInput" class="form-label">Role:</label>
+          <select id="roleInput" class="form-control" [(ngModel)]="newUser.role">
+            <option value="CLIENT">CLIENT</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="EMPLOYEE">EMPLOYEE</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email:</label>
+          <input id="emailInput" class="form-control" type="email" [(ngModel)]="newUser.email">
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password:</label>
+          <input id="passwordInput" class="form-control" type="password" [(ngModel)]="newUser.password">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success alert-small mt-3" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger alert-small mt-3" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button id="user-button" (click)="userId ? updateUser() : createUser()" class="btn" [ngClass]="userId ? 'btn-primary' : 'btn-success'">
+      <i class="fa" [ngClass]="userId ? 'fa-edit' : 'fa-plus'"></i> {{ userId ? 'Update User' : 'Create User' }}
+    </button>
+  </div>
+</div>

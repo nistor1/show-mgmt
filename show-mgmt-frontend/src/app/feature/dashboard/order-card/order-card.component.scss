@@ -1,0 +1,27 @@
+.custom-card {
+  border-radius: 0.5rem;
+  .standup-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  .details {
+    h5 {
+      color: #333;
+    }
+    p {
+      margin-bottom: 0.25rem;
+    }
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    &:hover {
+      background-color: #0056b3;
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+}

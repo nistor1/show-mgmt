@@ -1,0 +1,54 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 10px;
+  //max-height: 500px;
+ // overflow-y: auto;
+}
+
+.icon-container {
+  flex-shrink: 0;
+}
+
+.details-container {
+  flex-grow: 1;
+}
+
+.standup-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.role-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  color: #5555;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  color: #0056b3;
+}
+
+.role-button i {
+  margin-right: 10px;
+}
+

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: show-mgmt-mail
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 587
+    username: 8d4f9febe8d126
+    password: e844648ff6fc84
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+server:
+  port: 8888
+  servlet:
+    context-path: '/api'
+  error:
+    whitelabel:
+      enabled: false
+queues:
+  async-mail-sender-request: async-mail-sender-request

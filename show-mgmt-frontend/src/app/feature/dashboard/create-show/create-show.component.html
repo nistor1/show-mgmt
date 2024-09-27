@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+
+  <h5 class="mb-4">Add New Show</h5>
+
+  <div class="card shadow-lg p-3 mb-4">
+    <div class="d-flex flex-row align-items-center">
+      <div class="icon-container m-3">
+        <img src="assets/standup_image.jpg" alt="Stand-up Show" class="standup-image">
+      </div>
+      <div class="details-container ms-3">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name:</label>
+          <input id="nameInput" class="form-control" type="text" [(ngModel)]="newShow.name">
+        </div>
+        <div class="mb-3">
+          <label for="descriptionInput" class="form-label">Description:</label>
+          <textarea id="descriptionInput" class="form-control" [(ngModel)]="newShow.description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="locationInput" class="form-label">Location:</label>
+          <input id="locationInput" class="form-control" type="text" [(ngModel)]="newShow.location">
+        </div>
+        <div class="mb-3">
+          <label for="dateInput" class="form-label">Date:</label>
+          <input id="dateInput" class="form-control" type="date" [(ngModel)]="newShow.eventDate">
+        </div>
+        <div class="mb-3">
+          <label for="priceInput" class="form-label">Price:</label>
+          <input id="priceInput" class="form-control" type="number" [(ngModel)]="newShow.price">
+        </div>
+        <div class="mb-3">
+          <label for="ticketsLeftInput" class="form-label">Tickets Left:</label>
+          <input id="ticketsLeftInput" class="form-control" type="number" [(ngModel)]="newShow.numberOfTicketsLeft">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success alert-small mt-3" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger alert-small mt-3" role="alert">
+    {{ errorMessage }}
+  </div>
+  <div class="d-flex justify-content-end">
+    <button id="show-button" (click)="showId ? updateShow() : createShow()" class="btn" [ngClass]="showId ? 'btn-primary' : 'btn-success'">
+      <i class="fa" [ngClass]="showId ? 'fa-edit' : 'fa-plus'"></i> {{ showId ? 'Update Show' : 'Create Show' }}
+    </button>
+  </div>
+
+
+
+
+</div>

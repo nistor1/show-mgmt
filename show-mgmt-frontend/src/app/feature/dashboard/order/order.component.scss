@@ -1,0 +1,61 @@
+.custom-card {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  .standup-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  .details {
+    h4 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0.25rem;
+      color: #555;
+    }
+    strong {
+      color: #000;
+    }
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    &:hover {
+      background-color: #0056b3;
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    &:hover {
+      background-color: #5a6268;
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+}
+.role-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  color: #5555;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  color: #0056b3;
+}
+
+.role-button i {
+  margin-right: 10px;
+}

@@ -1,0 +1,101 @@
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f8ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container h4 {
+  color: #2c3e50;
+}
+
+.details-container p {
+  font-size: 1rem;
+}
+
+.card {
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+}
+
+.card .fa-laugh {
+  font-size: 2.5rem;
+  color: #3498db;
+}
+
+.card .text-info, .card .text-warning, .card .text-success, .card .text-danger, .card .text-dark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container h5 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-spinner input {
+  max-width: 70px;
+}
+.alert-small {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  width: auto;
+  display: inline-block;
+}
+
+.float-end {
+  float: right;
+}
+.smaller-comment-btn {
+  width: 120px;
+}
+
+.add-comment{
+  margin-top: 6rem;
+}
+
+.comment-container {
+  margin-top: 1px;
+}
+
+.alert-success {
+  margin-top: 1rem;
+}
+.role-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  color: #5555;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  color: #0056b3;
+}
+
+.role-button i {
+  margin-right: 10px;
+}

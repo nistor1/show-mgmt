@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+  <h5>User Details</h5>
+
+  <div class="card shadow-lg p-2">
+    <div class="d-flex flex-row">
+      <div class="m-2">
+        <i class="fa fa-user fa-2x"></i>
+      </div>
+      <div class="d-flex flex-column me-auto">
+        <span class="fw-bold">User Name: {{user?.name}}</span>
+        <span class="fw-light">Email: {{user?.email}}</span>
+        <span class="fw-light">Role: {{user?.role}}</span>
+        <span class="fw-light">Age: {{user?.age}}</span>
+        <span class="fw-light">User ID: {{getUserIdSubstring()}}</span>
+      </div>
+    </div>
+  </div>
+</div>

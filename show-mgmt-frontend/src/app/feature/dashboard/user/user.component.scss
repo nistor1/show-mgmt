@@ -1,0 +1,63 @@
+.container {
+  padding: 1rem;
+
+  h5 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .card {
+    border-radius: 0.5rem;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+    .d-flex {
+      align-items: center;
+
+      .fa-user {
+        font-size: 4rem;
+        color: #000000;
+      }
+
+      .m-2 {
+        margin-right: 1rem;
+      }
+
+      .fw-bold {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #000;
+      }
+
+      .fw-light {
+        font-weight: lighter;
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .me-auto {
+        margin-left: auto;
+      }
+    }
+  }
+}
+.role-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  color: #5555;
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  color: #0056b3;
+}
+
+.role-button i {
+  margin-right: 10px;
+}

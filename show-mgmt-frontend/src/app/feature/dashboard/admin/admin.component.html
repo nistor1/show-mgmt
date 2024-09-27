@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="container">
+    <button *ngIf="role === 'ADMIN'" (click)="navigateTo('ADMIN')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user-secret"></i> Admin
+    </button>
+    <button *ngIf="role === 'ADMIN' || role === 'EMPLOYEE'" (click)="navigateTo('EMPLOYEE')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Employee
+    </button>
+    <button *ngIf="true" (click)="navigateTo('CLIENT')" class="btn btn-primary me-2 role-button">
+      <i class="fa fa-user"></i> Client
+    </button>
+  </div>
+
+
+  <h5>ADMIN</h5>
+
+  <div class="mb-3 d-flex flex-row">
+    <button id="logout-button" (click)="logOut()" class="btn btn-danger">
+      <i class="fa fa-right-from-bracket"></i>
+    </button>
+    <button id="create-user-button" (click)="createUser()" class="btn btn-primary">
+      <i class="fa fa-plus"></i> Create User
+    </button>
+  </div>
+  <div class="p-2">
+    @for (user of users; track user.userId) {
+      <app-user-card [user]="user" (deleteUser)="deleteUserCalled($event)"></app-user-card>
+    } @empty {
+      <p id="empty-users">No user</p>
+    }
+  </div>
+</div>
